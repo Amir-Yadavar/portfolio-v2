@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "hero": {
+     
+    }
+  
+  },
+
+  "Navbar": {
+    "logoTitle": "امیر یادآور",
+    "conect_to_me": "شماره من",
+    "navItem1": "صفحه اصلی",
+    "navItem2": "مهارت ها",
+    "navItem3": "پرژه ها",
+    "navItem4": "درباره من",
+    "navItem5": "ارتباط با من"
+  
+  
+  }
+}

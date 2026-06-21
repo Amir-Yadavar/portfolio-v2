@@ -1,0 +1,15 @@
+{
+  "HomePage": {
+    "hero": {}
+  },
+
+  "Navbar": {
+    "logoTitle": "Amir Yadavar",
+    "conect_to_me": "Let's Talk",
+    "navItem1": "Home",
+    "navItem2": "Skills",
+    "navItem3": "Projects",
+    "navItem4": "About",
+    "navItem5": "Contact"
+  }
+}
