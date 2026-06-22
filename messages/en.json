@@ -1,6 +1,13 @@
 {
   "HomePage": {
-    "hero": {}
+    "hero": {
+      "welcome_text": "Hi , I'm",
+      "my_name": "Amir <style>Yadavar</style>",
+      "position": "Frontend Develper",
+      "text_hero": "I build exceptional digital experiences <br></br> with modern technologies and <br></br> a focus on performance",
+      "btn_text_1": "View My Work",
+      "btn_text_2": "Let's Talk"
+    }
   },
 
   "Navbar": {
