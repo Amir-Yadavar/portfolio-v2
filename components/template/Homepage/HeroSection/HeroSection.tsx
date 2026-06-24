@@ -47,7 +47,7 @@ function HeroSection() {
             </a>
           </div>
         </div>
-        <div className="col-span-12 lg:col-span-6 p-4" id="hero-canvas">
+        <div className="col-span-12 lg:col-span-6 relative" id="hero-canvas">
           <HeroCanvas />
         </div>
       </div>
