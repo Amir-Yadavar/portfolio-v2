@@ -1,21 +1,43 @@
 "use client";
 import * as THREE from "three";
-import { OrbitControls, useTexture } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useTexture } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { useControls } from "leva";
+
+function ResponsiveCamera() {
+  const { camera, size } = useThree();
+
+  useFrame(() => {
+    let targetZ = 3.8;
+
+    if (size.width < 480) {
+      targetZ = 7;
+    } else if (size.width < 768) {
+      targetZ = 5.5;
+    } else if (size.width < 1024) {
+      targetZ = 4.5;
+    } else if (size.width < 1400) {
+      targetZ = 3.2;
+    }
+
+    camera.position.set(0, 0, targetZ);
+    camera.updateProjectionMatrix();
+  });
+
+  return null;
+}
 
 function AnimatedSphere() {
   const sphereRef = useRef<THREE.Mesh | null>(null);
 
   const onyxRoughnessTexture = useTexture("/texture/onyx/Onyx_Roughness.jpg");
 
-  useFrame(() => {
+  useFrame((state, delta) => {
     if (!sphereRef.current) return;
 
-    sphereRef.current.rotation.z += 0.001;
-    sphereRef.current.rotation.y += 0.001;
+    sphereRef.current.rotation.z += 0.08 * delta;
+    sphereRef.current.rotation.y += 0.08 * delta;
   });
 
   return (
@@ -52,12 +74,12 @@ function Torus() {
 
   const localAxis = new THREE.Vector3(0, 0, 1);
 
-  useFrame(() => {
+  useFrame((state, delta) => {
     if (ring1Ref.current) {
-      ring1Ref.current.rotateOnAxis(localAxis, 0.002);
+      ring1Ref.current.rotateOnAxis(localAxis, 0.12 * delta);
     }
     if (ring2Ref.current) {
-      ring2Ref.current.rotateOnAxis(localAxis, 0.002); 
+      ring2Ref.current.rotateOnAxis(localAxis, 0.12 * delta);
     }
   });
 
@@ -84,7 +106,7 @@ function Torus() {
           </mesh>
         ))}
       </mesh>
-      
+
       {/* میله دوم با مقادیر عددی ثابت شما */}
       <mesh ref={ring2Ref} rotation={[-1.4, 0.32, 0]}>
         <torusGeometry args={[2.5, 0.01, 16, 100]} />
@@ -111,12 +133,13 @@ function Torus() {
 
 export default function HeroCanvas() {
   return (
-    <Canvas gl={{ alpha: true, antialias: true }}>
+    <Canvas
+      gl={{ alpha: true, antialias: true }}
+      camera={{ position: [0, 0, 5.5] }}
+    >
       <ambientLight intensity={1} />
-      {/* <directionalLight position={[3, 2, 4]} intensity={1} /> */}
-      <OrbitControls />
-      {/* <pointLight position={[0, 0, -5]} intensity={2} color="#a855f7" /> */}
-      
+      <ResponsiveCamera />
+
       <AnimatedSphere />
       <Torus />
       <EffectComposer>

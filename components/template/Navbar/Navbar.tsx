@@ -23,7 +23,7 @@ function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 right-0 w-full z-70">
+    <header className="fixed top-0 right-0 w-full z-70 backdrop-blur-sm">
       <div className=" flex justify-between items-center p-2.5 2xl:container mx-auto">
         {/* logo */}
         <Link href={"/"} className="flex items-center outline-none">

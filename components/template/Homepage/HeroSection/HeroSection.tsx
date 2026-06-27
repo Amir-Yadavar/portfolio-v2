@@ -7,11 +7,11 @@ function HeroSection() {
   return (
     <section className="mt-25">
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 lg:col-span-6 p-20">
+        <div className="col-span-12 lg:col-span-6 p-10 lg:p-20">
           <p className="text-3xl text-gray-600 dark:text-gray-400 py-2">
             {t("hero.welcome_text")}
           </p>
-          <h1 className="text-7xl font-bold py-2">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl font-bold py-2">
             {t.rich("hero.my_name", {
               style: (chunks) => (
                 <strong className="font-bold bg-(image:--gradient) inline-block text-transparent bg-clip-text">
@@ -20,8 +20,8 @@ function HeroSection() {
               ),
             })}
           </h1>
-          <h2 className="text-3xl py-4">{t("hero.position")}</h2>
-          <p className="text-gray-600 dark:text-gray-400 py-2 text-2xl">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl py-4">{t("hero.position")}</h2>
+          <p className="text-gray-600 dark:text-gray-400 py-2 text-xl xl:text-2xl">
             {t.rich("hero.text_hero", {
               br: () => <br />,
             })}
@@ -31,7 +31,7 @@ function HeroSection() {
               href=""
               className="flex items-center bg-(image:--gradient) p-4 rounded-xl m-2"
             >
-              <span>{t("hero.btn_text_1")}</span>
+              <span className="text-[12px] md:text-[16px]">{t("hero.btn_text_1")}</span>
               <span className="px-2">
                 <FaAngleRight />
               </span>
@@ -40,7 +40,7 @@ function HeroSection() {
               href=""
               className="flex items-center theme-shadow p-4 rounded-xl m-2"
             >
-              <span>{t("hero.btn_text_2")}</span>
+              <span className="text-[12px] md:text-[16px]">{t("hero.btn_text_2")}</span>
               <span className="px-2">
                 <FaAngleRight />
               </span>
