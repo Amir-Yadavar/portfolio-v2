@@ -4,9 +4,13 @@
       "welcome_text": "Hi , I'm",
       "my_name": "Amir <style>Yadavar</style>",
       "position": "Frontend Develper",
-      "text_hero": "I build exceptional digital experiences <br></br> with modern technologies and <br></br> a focus on performance",
+     "text_hero": "I design and build modern, high-performance web applications <br></br> using React, Next.js, TypeScript, and Three.js <br></br> to create fast, scalable, and engaging digital experiences.",
       "btn_text_1": "View My Work",
       "btn_text_2": "Let's Talk"
+    },
+    "my_projects":{
+      "title_sec_1":"Featured Projects",
+      "title_sec_2":"some things i'v <style> built</style>"
     }
   },
 

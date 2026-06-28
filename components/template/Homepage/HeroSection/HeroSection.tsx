@@ -7,7 +7,7 @@ function HeroSection() {
   return (
     <section className="mt-25">
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 lg:col-span-6 p-10 lg:p-20">
+        <div className="col-span-12 lg:col-span-6 p-10 lg:p-15">
           <p className="text-3xl text-gray-600 dark:text-gray-400 py-2">
             {t("hero.welcome_text")}
           </p>

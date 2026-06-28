@@ -7,6 +7,7 @@
   --text: #05050a;
   --gradient: linear-gradient(135deg, #6272f5 0%, #b853f5 100%);
   --lightGray: #656865;
+  --primary:#060910;
 }
 
 html.dark {
@@ -39,3 +40,19 @@ body {
     background-color 0.3s ease,
     color 0.3s ease;
 }
+
+
+/* pagination swiper */
+.project-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: gray;
+  opacity: 1;
+  display: inline-block;
+}
+
+.project-pagination .swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, #6272f5 0%, #b853f5 100%);
+}
+
+/* pagination swiper */

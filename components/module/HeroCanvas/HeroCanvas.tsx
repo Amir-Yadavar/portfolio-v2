@@ -32,6 +32,7 @@ function AnimatedSphere() {
   const sphereRef = useRef<THREE.Mesh | null>(null);
 
   const onyxRoughnessTexture = useTexture("/texture/onyx/Onyx_Roughness.jpg");
+  const onyxColorTexture = useTexture("/texture/onyx/Onyx_Color_new.png");
 
   useFrame((state, delta) => {
     if (!sphereRef.current) return;
@@ -47,7 +48,7 @@ function AnimatedSphere() {
         color="#000000"
         emissive="#a855f7"
         emissiveIntensity={2}
-        emissiveMap={onyxRoughnessTexture}
+        emissiveMap={onyxColorTexture}
         roughness={0.05}
         roughnessMap={onyxRoughnessTexture}
         metalness={0.05}
